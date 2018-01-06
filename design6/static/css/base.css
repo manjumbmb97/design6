@@ -1,0 +1,45 @@
+.latest {
+	padding-top: 10px;
+	border-bottom: 2px solid;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15pt;
+	color: #000000;
+	text-align: center;
+	width: 100%;
+}
+
+.lpost {
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+h2 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: "Berkshire Swash", cursive;
+}
+
+h2 a:link, h2 a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+
+h2 a:hover {
+	text-decoration: underline;
+}
+
+.date {
+	margin-top: 0;
+	color: #afafaf;
+}
+
+.footer {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	position: relative;
+	background-color: #0f9b76;
+	color: #ffffff;
+	font-size: 30pt;
+}

@@ -1,0 +1,24 @@
+{% extends 'design6/base.html' %}
+
+{% block content %}
+	<div class="container-fluid latest">
+		<p>{{ post.title }}</p>
+	</div>
+	<div class="date">
+		<p>{{ post.published_date }} </p>
+	</div>
+	<div class="container-fluid">
+		<p>{{ post.text|linebreaks }}</p>
+	</div>
+	<hr> <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+
+	{% for comment in post.comments.all %}
+		<div class="comment">
+			<div class="date">{{ comment.created_date }}</div>
+			<strong>{{ comment.author }}</strong>
+			<p>{{ comment.text|linebreaks }}</p>
+		</div>
+		{% empty %}
+			<p>No comments here yet :(</p>
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+{% load post_extra %}
+<html>
+	<head>
+		<title>Design6</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/navBar.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	</head>
+
+	<body>
+		<div class="container-fluid menuBar">
+			<longMenu>
+				<ul>
+					<li><a href="{% url 'home_page' %}" id="titleText">Design6</a></li>
+					<li><a href="{% url 'post_all' %}">All Posts</a></li>
+					<li><a href="{% url 'gallery_all' %}">Gallery</a></li>
+					<li><a href="{% url 'post_recent' %}">Recent Posts</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+				</ul>
+			</longMenu>
+			<shortMenu>
+				<a href="{% url 'home_page' %}" id="titleText">Design6</a>
+				<button type="button" data-toggle="collapse" data-target="#menu"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+				<ul id="menu" class="collapse menuList">
+					<li><a href="{% url 'post_all' %}">All Posts</a></li>
+					<li><a href="{% url 'gallery_all' %}">Gallery</a></li>
+					<li><a href="{% url 'post_recent' %}">Recent Posts</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+				</ul>
+			</shortMenu>
+		</div>
+		{% block content %}
+		{% endblock %}
+		<div class="container-fluid footer">
+			<p> footer </p>
+		</div>
+	</body>
+</html>

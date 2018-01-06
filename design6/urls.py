@@ -1,0 +1,14 @@
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+	url(r'^$', views.home_page, name= 'home_page'),
+	url(r'^posts/all/$', views.post_all, name='post_all'),
+	url(r'^posts/recent/$', views.post_recent, name='post_recent'),
+	url(r'^about/$', views.about_us, name='about_us'),
+	url(r'^contact/$', views.contact_us, name='contact_us'),
+	url(r'^gallery/$', views.gallery_all, name='gallery_all'),
+	url(r'^post/(?P<pk>\d+)/$', views.post_detail, name= 'post_detail'),
+	url(r'^post/new/$', views.post_new, name='post_new'),
+	url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
+]

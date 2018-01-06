@@ -1,0 +1,100 @@
+.menuBar {
+	background-color: #42f4c5;
+	width :100%;
+	top:0;
+	left:0;
+}
+
+ul{
+	list-style: none;
+}
+
+longMenu ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+longMenu ul li{
+	display: inline-block;
+	font-size: 13pt;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px;
+}
+
+longMenu #titleText {
+	padding-right: 5px;
+}
+
+shortMenu {
+	display: none;
+	margin: 2px; 
+}
+
+shortMenu ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+shortMenu ul li{
+	display: block;
+	font-size: 13pt;
+	color: #ffffff;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+shortMenu button {
+	background-color: transparent;
+	color: #ffffff;
+	float: right;
+	margin: 0;
+	padding: 13px;
+	border: none;
+}
+
+#titleText {
+	font-family: "Berkshire Swash", cursive;
+	font-size: 20pt;
+	text-decoration: none;
+}
+
+ul li a:link, ul li a:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+longMenu ul li:hover {
+	background-color: #39e5b8;
+}
+
+@media only screen and (max-width: 640px) {
+	shortMenu {
+		display:block;
+	}
+
+	shortMenu li:hover {
+		background-color: #39e5b8;
+	}
+
+	shortMenu li a:hover {
+		color: #2bbc96;
+	}
+
+	shortMenu .menuHeader {
+		border-bottom: 1px solid;
+	}
+
+	shortMenu #titleText:link, shortMenu #titleText:visited {
+		color: #ffffff;
+	}
+
+	shortMenu #titleText:hover {
+		color: #2bbc96;
+	}
+
+	longMenu {
+		display: none;
+	}
+}

@@ -1,0 +1,7 @@
+{% for post in latest_post %}
+<h2><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h2>
+<h6 class="date">{{ post.published_date }}</h6>
+<div class="postText">
+	<p>{{ post.text|linebreaks }}</p>
+</div>
+{%endfor%}
