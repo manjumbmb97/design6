@@ -34,6 +34,11 @@ h2 a:hover {
 	color: #afafaf;
 }
 
+.footer ul {
+	margin:0;
+	padding-left:10px; 
+}
+
 .footer {
 	bottom: 0;
 	left: 0;
@@ -54,4 +59,9 @@ h2 a:hover {
 
 .footer_list li a:hover {
 	text-decoration: underline; 
+}
+
+.marginClass {
+	margin-left: 30px;
+	margin-bottom: 0;
 }
