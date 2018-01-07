@@ -6,6 +6,7 @@
 	color: #000000;
 	text-align: center;
 	width: 100%;
+	margin-bottom: 15px;
 }
 
 .lpost {
@@ -37,9 +38,20 @@ h2 a:hover {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	top: 20px;
 	width: 100%;
 	position: relative;
-	background-color: #0f9b76;
+	background-color: #000000;
 	color: #ffffff;
-	font-size: 30pt;
+	font-size: 10pt;
+}
+
+.footer_list li {
+	display: inline-block;
+	text-align: center;
+	padding: 5px;
+}
+
+.footer_list li a:hover {
+	text-decoration: underline; 
 }

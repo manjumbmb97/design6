@@ -5,9 +5,6 @@
 		<p>Contact Us</p>
 	</div>
 	<div class="container-fluid">
-		<form method = 'POST' class='post-form'>{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit" class="save btn btn-default">Submit</button>
-		</form>
+		<p> Thank you {{ contact.name }} for contacting us! Our team will get in touch with you soon.</p>
 	</div>
 {% endblock %}

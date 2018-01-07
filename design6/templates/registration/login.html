@@ -1,0 +1,18 @@
+{% extends 'design6/base.html' %}
+
+{% block content %}
+	<div class="container-fluid latest">
+		<p>Login</p>
+	</div>
+	{% if form.errors %}
+		<p>Your username and password didn't match. Please try again</p>
+	{% else %}
+		<h4>Enter username and password</h4>
+	{% endif %}
+	<form method="POST" action="{% url 'login' %}">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="hidden" name="next" value="{{ next }}" />
+		<input type="submit" value="Log-in">
+	</form>
+{% endblock %}

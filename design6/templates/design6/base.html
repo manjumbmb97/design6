@@ -24,6 +24,12 @@
 					<li><a href="{% url 'post_recent' %}">Recent Posts</a></li>
 					<li><a href="{% url 'about_us' %}">About Us</a></li>
 					<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+					{% if request.user.is_authenticated %}
+						<li><span class="glyphicon glyphicon-user" style="margin-right: 0;"></span><a href="{% url 'dashboard' %}"> {{ request.user.username }}</a></li>
+						<li><a href="{% url 'logout' %}">Logout</a></li>
+					{% else %}
+						<li><a href="{% url 'login' %}">Login</a></li>
+					{% endif %}
 				</ul>
 			</longMenu>
 			<shortMenu>
@@ -35,13 +41,25 @@
 					<li><a href="{% url 'post_recent' %}">Recent Posts</a></li>
 					<li><a href="{% url 'about_us' %}">About Us</a></li>
 					<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+					{% if request.user.is_authenticated %}
+						<li><span class="glyphicon glyphicon-user" style="margin-right: 0;"></span><a href="{% url 'dashboard' %}"> {{ request.user.username }}</a></li>
+						<li><a href="{% url 'logout' %}">Logout</a></li>
+					{% else %}
+						<li><a href="{% url 'login' %}">Login</a></li>
+					{% endif %}
 				</ul>
 			</shortMenu>
 		</div>
 		{% block content %}
 		{% endblock %}
 		<div class="container-fluid footer">
-			<p> footer </p>
+			<ul class="footer_list">
+				<li><a href="{% url 'about_us' %}">About Us</a></li>
+				<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">FAQ</a></li>
+			<ul>
 		</div>
 	</body>
 </html>

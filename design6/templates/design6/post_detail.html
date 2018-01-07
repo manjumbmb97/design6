@@ -14,7 +14,11 @@
 
 	{% for comment in post.comments.all %}
 		<div class="comment">
-			<div class="date">{{ comment.created_date }}</div>
+
+			<div class="date">
+				{{ comment.created_date }}
+				<a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+			</div>
 			<strong>{{ comment.author }}</strong>
 			<p>{{ comment.text|linebreaks }}</p>
 		</div>
