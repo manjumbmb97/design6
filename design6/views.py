@@ -25,6 +25,15 @@ def post_recent(request):
 def about_us(request):
 	return render(request, 'design6/about_us.html', {})
 
+def privacy_policy(request):
+	return render(request, 'design6/privacy_policy.html', {})
+
+def support(request):
+	return render(request, 'design6/support.html', {})
+
+def faq(request):
+	return render(request, 'design6/faq.html', {})
+
 def contact_us(request):
 	if request.method == "POST":
 		form = ContactForm(request.POST)
@@ -83,7 +92,7 @@ def add_comment_to_post(request, pk):
 	else:
 		form = CommentForm()
 	return render(request, 'design6/add_comment_to_post.html', {'form':form})
-
+@login_required
 def comment_remove(request, pk):
 	comment = get_object_or_404(Comment, pk=pk)
 	comment.delete()
