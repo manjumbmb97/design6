@@ -10,6 +10,10 @@
 	<div class="marginClass">
 		<p>{{ post.text|linebreaks }}</p>
 	</div>
+	<div class="marginClass">
+		<p><a href="{% url 'post_share' pk=post.pk %}">  Share this post</a></p>
+	</div>
+
 	<hr> <a class="btn btn-default marginClass" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
 
 	{% for comment in post.comments.all %}

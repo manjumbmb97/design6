@@ -1,0 +1,20 @@
+{% extends 'design6/base.html' %}
+
+{% block content %}
+	<div class="container-fluid latest">
+		<p>Share a post</p>
+	</div>
+	<div class="container-fluid marginClass">
+		{% if sent %}
+			<h4>E-mail successfully sent</h4>
+			<p> "{{post.title}}" was successfully sent to {{ cd.to }}</p>
+		{% else %}
+			<h4>Share "{{ post.title }}" by e-mail</h4>
+			<form action="." method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit"  value="Send e-mail">
+			</form>
+		{% endif %}
+	</div>
+{% endblock %}

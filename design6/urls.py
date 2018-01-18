@@ -14,6 +14,7 @@ urlpatterns = [
 	url(r'^contact/(?P<pk>\d+)/$', views.after_contact, name='after_contact'),
 	url(r'^gallery/$', views.gallery_all, name='gallery_all'),
 	url(r'^post/(?P<pk>\d+)/$', views.post_detail, name= 'post_detail'),
+	url(r'^share/(?P<pk>\d+)/$', views.post_share, name='post_share'),
 	url(r'^post/new/$', views.post_new, name='post_new'),
 	url(r'^post/(?P<pk>\d+)/publish/$', views.post_publish, name='post_publish'),
 	url(r'^post/(?P<pk>\d+)/remove/$', views.post_remove, name='post_remove'),
