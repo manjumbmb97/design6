@@ -5,16 +5,42 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from .models import Post, Comment, Contact, Gallery
-from .forms import PostForm, CommentForm, ContactForm, EmailPostForm
+from .models import Profile, Post, Comment, Contact, Gallery
+from .forms import PostForm, CommentForm, ContactForm, EmailPostForm, UserSignUpForm, UserEditForm, ProfileEditForm
 
 # Create your views here.
 def home_page(request):
 	return render(request, 'design6/home_page.html')
 
+def signUp(request):
+	if request.method == 'POST':
+		user_form = UserSignUpForm(request.POST)
+		if user_form.is_valid():
+			new_user = user_form.save(commit=False)
+			new_user.set_password(user_form.cleaned_data['password'])
+			new_user.save()
+			profile = Profile.objects.create(user=new_user)
+			return render(request, 'registration/signUp_done.html', {'new_user': new_user})
+	else:
+		user_form = UserSignUpForm()
+	return render(request, 'registration/signUp.html',{'user_form': user_form})	
+
+@login_required
+def profile_edit(request):
+	if request.method == 'POST':
+		user_form = UserEditForm(instance=request.user, data=request.POST)
+		profile_form = ProfileEditForm(instance=request.user.profile, data=request.POST, files=request.FILES)
+		if user_form.is_valid() and profile_form.is_valid():
+			user_form.save()
+			profile_form.save()
+	else:
+		user_form = UserEditForm(instance=request.user)
+		profile_form = ProfileEditForm(instance=request.user.profile)
+	return render(request, 'registration/profile_edit.html',{'user_form': user_form, 'profile_form': profile_form})
+
 @login_required
 def dashboard(request):
-	return render(request, 'design6/dashboard.html', {'section':'dashboard'})
+	return render(request, 'design6/dashboard.html')
 
 def post_all(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

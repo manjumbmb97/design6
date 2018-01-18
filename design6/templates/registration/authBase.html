@@ -16,11 +16,22 @@
 
 	<body>
 		<div class="container-fluid menuBar">
-			<authMenu>
+			<longMenu>
 				<ul>
 					<li><a href="{% url 'home_page' %}" id="titleText">Design6</a></li>
+					<span style="float: right; margin-top: 8px;">
+					<li><strong><a href="{% url 'login' %}">Login</a></strong></li> or
+					<li><strong><a href="{% url 'signUp' %}">Sign up</a></strong></li></span>
 				</ul>
-			</authMenu>
+			</longMenu>
+			<shortMenu>
+				<a href="{% url 'home_page' %}" id="titleText">Design6</a>
+				<button type="button" data-toggle="collapse" data-target="#menu"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+				<ul id="menu" class="collapse menuList">
+					<li><strong><a href="{% url 'login' %}">Login</a></strong></li>
+					<li><strong><a href="{% url 'signUp' %}">Sign up</a></strong></li>
+				</ul>
+			</shortMenu>
 		</div>
 		{% block content %}
 		{% endblock %}

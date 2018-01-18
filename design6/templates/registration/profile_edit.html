@@ -1,0 +1,15 @@
+{% extends 'design6/base.html' %}
+
+{% block content %}
+	<div class="container-fluid latest">
+		<p>Edit your account</p>
+	</div>
+	<div class="container-fluid marginClass">
+		<form action="." method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ user_form.as_p }}
+			{{ profile_form.as_p }}
+			<input type="submit" value="Save Changes">
+		</form>
+	</div>
+{% endblock %}

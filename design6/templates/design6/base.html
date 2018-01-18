@@ -25,10 +25,13 @@
 					<li><a href="{% url 'about_us' %}">About Us</a></li>
 					<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
 					{% if request.user.is_authenticated %}
+						<span style="float: right; margin-top: 8px;">
 						<li><span class="glyphicon glyphicon-user" style="margin-right: 0;"></span><a href="{% url 'dashboard' %}"> {{ request.user.username }}</a></li>
-						<li><a href="{% url 'logout' %}">Logout</a></li>
+						<li><a href="{% url 'logout' %}">Logout</a></li></span>
 					{% else %}
-						<li><a href="{% url 'login' %}">Login</a></li>
+						<span style="float: right; margin-top: 8px;">
+						<li><strong><a href="{% url 'login' %}">Login</a></strong></li> or
+						<li><strong><a href="{% url 'signUp' %}">Sign up</a></strong></li></span>
 					{% endif %}
 				</ul>
 			</longMenu>
@@ -45,7 +48,8 @@
 						<li><span class="glyphicon glyphicon-user" style="margin-right: 0;"></span><a href="{% url 'dashboard' %}"> {{ request.user.username }}</a></li>
 						<li><a href="{% url 'logout' %}">Logout</a></li>
 					{% else %}
-						<li><a href="{% url 'login' %}">Login</a></li>
+						<li><strong><a href="{% url 'login' %}">Login</a></strong></li>
+						<li><strong><a href="{% url 'signUp' %}">Sign up</a></strong></li>
 					{% endif %}
 				</ul>
 			</shortMenu>

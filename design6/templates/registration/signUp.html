@@ -1,0 +1,15 @@
+{% extends 'registration/authBase.html' %}
+
+{% block content %}
+	<div class="container-fluid latest">
+		<p>Sign Up</p>
+	</div>
+	<div class="container-fluid marginClass">
+		<p>Sign Up using form below</p>
+		<form action="." method="post">
+			{% csrf_token %}
+			{{ user_form.as_p }}
+			<input type="submit" value = "Create account">
+		</form>
+	</div>
+{% endblock %}

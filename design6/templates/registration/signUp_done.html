@@ -1,0 +1,10 @@
+{% extends 'registration/authBase.html' %}
+
+{% block content %}
+	<div class="container-fluid latest">
+		<p>Registration Done</p>
+	</div>
+	<div class="container-fluid marginClass">
+		<p>Your account has been sucessfully created. You can <a href="{% url 'login' %}">login</a> now</p>
+	</div>
+{% endblock %}
