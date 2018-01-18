@@ -69,6 +69,11 @@ longMenu ul li:hover {
 	background-color: #39e5b8;
 }
 
+authMenu {
+	padding: 10px;
+	text-align: center;
+}
+
 @media only screen and (max-width: 640px) {
 	shortMenu {
 		display:block;
