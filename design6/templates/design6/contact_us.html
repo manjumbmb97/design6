@@ -4,10 +4,10 @@
 	<div class="container-fluid latest">
 		<p>Contact Us</p>
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid marginClass">
 		<form method = 'POST' class='post-form'>{% csrf_token %}
 			{{ form.as_p }}
-			<button type="submit" class="save btn btn-default">Submit</button>
+			<input type="submit" value="Submit">
 		</form>
 	</div>
 {% endblock %}
