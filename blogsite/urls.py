@@ -23,6 +23,7 @@ from django.contrib.auth import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', views.login, name='login'),
+    url('',include('social.apps.django_app.urls', namespace='social')),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^password-change/$', views.password_change, name='password_change'),
     url(r'^password-change/done/$', views.password_change_done, name='password_change_done'),

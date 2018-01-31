@@ -5,6 +5,18 @@
 		<p>Edit your account</p>
 	</div>
 	<div class="container-fluid marginClass">
+		{% if messages %}
+			<ul class="messages">
+				{% for message in messages %}
+					<li class="{{ message.tags }}">
+						{{ message|safe }}
+							<a href="#" class="close">X</a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+	<div class="container-fluid marginClass">
 		<form action="." method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{ user_form.as_p }}

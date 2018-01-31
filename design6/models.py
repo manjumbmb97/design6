@@ -6,7 +6,7 @@ from django.conf import settings
 from django.utils import timezone
 from PIL import Image
 from django.core.urlresolvers import reverse
-from imageUpload import get_upload_path
+from .imageUpload import get_upload_path
 # Create your models here.
 class Profile(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL)

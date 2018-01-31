@@ -17,6 +17,12 @@
 			<input type="submit" value="Log-in">
 		</form>
 	</div>
+	<div class="container-fluid marginClass social">
+		<ul>
+			<li class="facebook"><a href="{% url 'social:begin' 'facebook' %}"><button>Sign in with Facebook</button></a></li>
+			<li class="twitter"><a href="{% url 'social:begin' 'twitter' %}"><button>Sign in with Twitter</button></a></li>
+		</ul>
+	</div>
 	<div class="container-fluid marginClass">
 		<p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
 		<p>Don't have an account? <a href="{% url 'signUp' %}">Sign up now</a></p>
