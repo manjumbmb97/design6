@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +27,7 @@ SECRET_KEY = '5lvj-jcq$1_%39ol=utq7q-5&hwk%_u0@d7-#@^loa&3w57ew@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','design6.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','design6.pythonanywhere.com','.herokuapp.com']
 
 
 # Application definition
@@ -143,3 +144,6 @@ EMAIL_HOST_USER = 'design6ltd@gmail.com'
 EMAIL_HOST_PASSWORD = 'DesignIsMyPassion6'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)

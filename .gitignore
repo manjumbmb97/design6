@@ -1,7 +1,5 @@
 *.pyc
-*~
-__pycache__
+django.db.backends.postgresql_psycopg2
 blogenv
-db.sqlite
-/static
-.DS_Store
+__pycache__
+settings.py
