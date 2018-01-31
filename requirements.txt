@@ -9,5 +9,4 @@ pycrypto==2.6.1
 pytz==2017.3
 six==1.11.0
 stevedore==1.28.0
-unity-lens-photos==1.0
 whitenoise==3.3.1
