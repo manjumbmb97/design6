@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'design6',
     'django.contrib.admin',
+    'social_django',
     'social.apps.django_app.default',
 ]
 
@@ -155,6 +156,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
+#SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['user','']
 SOCIAL_AUTH_FACEBOOK_KEY = '549848105387982'
 SOCIAL_AUTH_FACEBOOK_SECRET = '1aa48d7d72203e4f8e25037d5bf2e818'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
