@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5lvj-jcq$1_%39ol=utq7q-5&hwk%_u0@d7-#@^loa&3w57ew@'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -157,15 +157,15 @@ LOGIN_REDIRECT_URL = '/dashboard'
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
 #SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['user','']
-SOCIAL_AUTH_FACEBOOK_KEY = '549848105387982'
-SOCIAL_AUTH_FACEBOOK_SECRET = '1aa48d7d72203e4f8e25037d5bf2e818'
-SOCIAL_AUTH_TWITTER_KEY = '0XMxjHHK92SlDvVQ8lN7Au1IJ'
-SOCIAL_AUTH_TWITTER_SECRET = ' azyylwA54styQDQJKMG5VugIFdlTWVq0IpAf9lG70V7F0iwFnn'
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
+SOCIAL_AUTH_TWITTER_KEY = ''
+SOCIAL_AUTH_TWITTER_SECRET = ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'design6ltd@gmail.com'
-EMAIL_HOST_PASSWORD = 'DesignIsMyPassion6'
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = '6'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 
